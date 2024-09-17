@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemedicine - Book Appointment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html">
+                <h1 class="text-3xl font-bold">TeleMed</h1>
+            </a>
+            <nav>
+                <a href="index.html" class="px-3">Home</a>
+                <a href="services.html" class="px-3">Services</a>
+                <a href="booking.html" class="px-3">Book Appointment</a>
+                <a href="contact.html" class="px-3">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-600 text-white text-center py-10">
+        <h2 class="text-4xl font-semibold">Book Your Appointment</h2>
+        <p class="mt-4">Get personalized consultations at your convenience. Choose your service and schedule your appointment today!</p>
+    </section>
+
+    <!-- Booking Form Section -->
+    <main class="container mx-auto mt-10 p-5">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Appointment Details</h2>
+
+        <div class="flex justify-center">
+            <form action="#" method="post" class="bg-white p-8 rounded shadow-lg w-full max-w-lg">
+                <!-- Full Name Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded mt-1" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded mt-1" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- Select Service Field -->
+                <div class="mb-4">
+                    <label for="service" class="block text-gray-700">Select Service</label>
+                    <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded mt-1" required>
+                        <option value="">Choose a Service</option>
+                        <option>Doctor Consultation</option>
+                        <option>Lab Test</option>
+                        <option>Health Package</option>
+                    </select>
+                </div>
+
+                <!-- Date Field -->
+                <div class="mb-4">
+                    <label for="date" class="block text-gray-700">Preferred Date</label>
+                    <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded mt-1" required>
+                </div>
+
+                <!-- Time Field -->
+                <div class="mb-4">
+                    <label for="time" class="block text-gray-700">Preferred Time</label>
+                    <input type="time" id="time" name="time" class="w-full p-3 border border-gray-300 rounded mt-1" required>
+                </div>
+
+                <button type="submit" class="bg-green-600 text-white py-3 px-4 rounded w-full">Book Appointment</button>
+            </form>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="text-center mt-10">
+            <h3 class="text-2xl font-semibold mb-2">Booking Instructions</h3>
+            <p>Once your appointment is confirmed, you will receive an email with further instructions. Please ensure your details are correct before submitting.</p>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-green-600 text-white mt-10 p-4 text-center">
+        <p>&copy; 2024 TeleMed. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
