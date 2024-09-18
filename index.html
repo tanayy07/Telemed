@@ -6,13 +6,24 @@
     <title>Telemedicine - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <style>
+   <style>
+    .hero-bg {
+        background-image: url('doc 1.jpeg'); /* Add your hero image URL */
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent repeating the image */
+        width: 100%; /* Ensure the container takes full width */
+        height: 100vh; /* Set height to full viewport height for the hero section */
+    }
+
+    @media (max-width: 768px) {
         .hero-bg {
-            background-image: url('doc\ 1.jpeg'); /* Add your hero image URL */
-            background-size: cover;
-            background-position: center;
+            background-size: cover; /* Ensure the image covers the container on smaller screens */
+            height: 70vh; /* Adjust height for smaller screens if needed */
         }
-    </style>
+    }
+</style>
+    
 </head>
 <body class="bg-gray-50">
     <!-- Header Section -->
