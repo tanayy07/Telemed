@@ -5,43 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telemedicine - Services</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Icons -->
     <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
+    <!-- Header -->
     <header class="bg-green-700 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold">TeleMed</a>
-            <nav>
-                <a href="index.html" class="px-3 hover:text-gray-200">Home</a>
-                <a href="services.html" class="px-3 text-gray-200 border-b-2 border-gray-200">Services</a>
-                <a href="booking.html" class="px-3 hover:text-gray-200">Book Appointment</a>
-                <a href="contact.html" class="px-3 hover:text-gray-200">Contact Us</a>
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html">
+                <h1 class="text-3xl font-bold">TeleMed</h1>
+            </a>
+            <nav class="flex space-x-3 mt-3 md:mt-0">
+                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
+                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
+                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
+                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
             </nav>
         </div>
     </header>
 
+    <!-- Services Section -->
     <main class="container mx-auto mt-10 p-5">
         <h2 class="text-4xl font-semibold mb-8 text-center text-green-700">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h3 class="text-xl font-bold text-green-700 mb-3">Doctor Consultations</h3>
-                <p class="text-gray-700">Get expert medical advice from qualified doctors through video calls or chat, right from the comfort of your home.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h3 class="text-xl font-bold text-green-700 mb-3">Lab Tests at Home</h3>
-                <p class="text-gray-700">Schedule lab tests and have samples collected from your home. Receive results quickly and conveniently.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h3 class="text-xl font-bold text-green-700 mb-3">Specialized Health Packages</h3>
-                <p class="text-gray-700">Choose from a range of health packages tailored to meet specific health needs and conditions.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h3 class="text-xl font-bold text-green-700 mb-3">Prescription Refills</h3>
-                <p class="text-gray-700">Easily refill your prescriptions and get them delivered to your doorstep without the hassle of visiting a pharmacy.</p>
-            </div>
+
+            <!-- Doctor Consultation Card -->
+            <a href="consultation.html" class="group">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
+                    <i class="fas fa-user-md text-5xl text-green-700 absolute top-4 right-4"></i>
+                    <h3 class="text-xl font-bold text-green-700 mb-3">Doctor Consultations</h3>
+                    <p class="text-gray-700">Get expert medical advice from qualified doctors through video calls or chat, right from the comfort of your home.</p>
+                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
+                </div>
+            </a>
+
+            <!-- Lab Test Card -->
+            <a href="lab-test.html" class="group">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
+                    <i class="fas fa-vial text-5xl text-green-700 absolute top-4 right-4"></i>
+                    <h3 class="text-xl font-bold text-green-700 mb-3">Lab Tests at Home</h3>
+                    <p class="text-gray-700">Schedule lab tests and have samples collected from your home. Receive results quickly and conveniently.</p>
+                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
+                </div>
+            </a>
+
+            <!-- Health Packages Card -->
+            <a href="health-packages.html" class="group">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
+                    <i class="fas fa-heartbeat text-5xl text-green-700 absolute top-4 right-4"></i>
+                    <h3 class="text-xl font-bold text-green-700 mb-3">Specialized Health Packages</h3>
+                    <p class="text-gray-700">Choose from a range of health packages tailored to meet specific health needs and conditions.</p>
+                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
+                </div>
+            </a>
+
+            <!-- Prescription Refill Card -->
+            <a href="prescription-refill.html" class="group">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
+                    <i class="fas fa-pills text-5xl text-green-700 absolute top-4 right-4"></i>
+                    <h3 class="text-xl font-bold text-green-700 mb-3">Prescription Refills</h3>
+                    <p class="text-gray-700">Easily refill your prescriptions and get them delivered to your doorstep without the hassle of visiting a pharmacy.</p>
+                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
+                </div>
+            </a>
+
         </div>
+        
+        <!-- Why Choose Us Section -->
+        <section class="mt-16 text-center">
+            <h2 class="text-3xl font-semibold text-green-700 mb-6">Why Choose TeleMed?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-green-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-headset text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-xl text-green-700 mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Our team is available 24/7 to assist you with any queries and ensure a smooth healthcare experience.</p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-laptop-medical text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-xl text-green-700 mb-2">Easy Access</h3>
+                    <p class="text-gray-600">Get access to medical care and consultations from anywhere, anytime, through our platform.</p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-shield-alt text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-xl text-green-700 mb-2">Trusted Experts</h3>
+                    <p class="text-gray-600">All our healthcare professionals are verified and highly qualified, ensuring you receive the best care.</p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-truck-medical text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-xl text-green-700 mb-2">Home Services</h3>
+                    <p class="text-gray-600">We bring healthcare to your doorstep with home-based lab tests and prescription delivery services.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="bg-green-700 text-white mt-10 p-4 text-center">
         <p>&copy; 2024 TeleMed. All Rights Reserved.</p>
     </footer>
