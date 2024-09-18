@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <style>
-        
         .hero-bg {
             background-image: url('WhatsApp Image 2024-09-17 at 10.21.05_ea1fcadd.jpg'); /* Add your hero image URL */
             background-size: cover;
@@ -16,76 +15,76 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Header Section -->
     <header class="bg-green-700 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <a href="index.html">
                 <h1 class="text-3xl font-bold">TeleMed</h1>
             </a>
-            <nav>
-                <a href="index.html" class="px-3 text-gray-200 hover:text-white">Home</a>
-                <a href="services.html" class="px-3 text-gray-200 hover:text-white">Services</a>
-                <a href="booking.html" class="px-3 text-gray-200 hover:text-white">Book Appointment</a>
-                <a href="contact.html" class="px-3 text-gray-200 hover:text-white">Contact Us</a>
+            <nav class="flex space-x-3 mt-3 md:mt-0">
+                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
+                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
+                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
+                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-bg text-white text-center py-44">
-            <div class="container mx-auto">
-                <h2 class="text-5xl font-semibold mb-9 text-teal-500">Quality Care at Your Fingertips</h2>
-                <p class="text-lg mb-8 text-teal-500">Experience top-notch medical consultations and services from anywhere, anytime.</p>
-                <a href="booking.html" class="bg-green-700 text-200 py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-700">Book Your Appointment</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-bg text-white text-center py-32 md:py-44 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl sm:text-5xl font-semibold mb-8 text-teal-500">Quality Care at Your Fingertips</h2>
+            <p class="text-base sm:text-lg mb-8 text-teal-500">Experience top-notch medical consultations and services from anywhere, anytime.</p>
+            <a href="booking.html" class="bg-green-700 text-white py-3 px-6 rounded-full text-base font-semibold shadow-lg hover:bg-gray-700">Book Your Appointment</a>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section class="container mx-auto text-center py-16">
-            <h2 class="text-3xl font-semibold mb-10 text-green-700">Our Services</h2>
+    <!-- Services Section -->
+    <section class="container mx-auto text-center py-12 px-4">
+        <h2 class="text-3xl sm:text-4xl font-semibold mb-10 text-green-700">Our Services</h2>
+        <div class="flex flex-wrap justify-center">
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                <h3 class="text-xl font-semibold mb-4 text-green-700">Consultations</h3>
+                <p class="text-gray-700">Get expert medical advice and consultations from experienced doctors.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                <h3 class="text-xl font-semibold mb-4 text-green-700">Lab Tests</h3>
+                <p class="text-gray-700">Convenient lab tests with home sample collection and quick results.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                <h3 class="text-xl font-semibold mb-4 text-green-700">Medication</h3>
+                <p class="text-gray-700">Order prescriptions and have medications delivered to your doorstep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-100 py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-8 text-green-700">What Our Patients Say</h2>
             <div class="flex flex-wrap justify-center">
-                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-80">
-                    <h3 class="text-xl font-semibold mb-4 text-green-700">Consultations</h3>
-                    <p class="text-gray-700">Get expert medical advice and consultations from experienced doctors.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                    <p class="italic text-gray-800">"TeleMed has been a lifesaver. The consultations are quick, and the doctors are very knowledgeable."</p>
+                    <p class="mt-4 font-semibold text-gray-600">- Aditya Vishe</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-80">
-                    <h3 class="text-xl font-semibold mb-4 text-green-700">Lab Tests</h3>
-                    <p class="text-gray-700">Convenient lab tests with home sample collection and quick results.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-80">
-                    <h3 class="text-xl font-semibold mb-4 text-green-700">Medication</h3>
-                    <p class="text-gray-700">Order prescriptions and have medications delivered to your doorstep.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                    <p class="italic text-gray-800">"Convenient and reliable. I got my lab results in no time and the service was top-notch."</p>
+                    <p class="mt-4 font-semibold text-gray-600">- Sanika Shirode</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section class="bg-gray-100 py-16">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-semibold mb-10 text-green-700">What Our Patients Say</h2>
-                <div class="flex flex-wrap justify-center">
-                    <div class="bg-white p-6 rounded-lg shadow-md m-4 w-80">
-                        <p class="italic text-gray-800">"TeleMed has been a lifesaver. The consultations are quick, and the doctors are very knowledgeable."</p>
-                        <p class="mt-4 font-semibold text-gray-600">- Aditya Vishe</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md m-4 w-80">
-                        <p class="italic text-gray-800">"Convenient and reliable. I got my lab results in no time and the service was top-notch."</p>
-                        <p class="mt-4 font-semibold text-gray-600">- Sanika Shirode</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Call to Action Section -->
+    <section class="bg-green-700 text-white text-center py-12 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Ready to Get Started?</h2>
+            <p class="mb-6 text-base sm:text-lg">Join the thousands of satisfied patients who trust TeleMed for their healthcare needs.</p>
+            <a href="booking.html" class="bg-green-500 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-400">Schedule a Consultation</a>
+        </div>
+    </section>
 
-        <
-        <section class="bg-green-700 text-white text-center py-12">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-semibold mb-4 text-gray-200">Ready to Get Started?</h2>
-                <p class="mb-6 text-gray-200">Join the thousands of satisfied patients who trust TeleMed for their healthcare needs.</p>
-                <a href="booking.html" class="bg-green-500 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-400">Schedule a Consultation</a>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer class="bg-green-700 text-white mt-10 p-4 text-center">
         <p>&copy; 2024 TeleMed. All Rights Reserved.</p>
     </footer>
