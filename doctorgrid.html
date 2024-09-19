@@ -1,75 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Listing Grid</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Telemedicine - Doctors List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Additional styles for the doctor cards */
+        .doctor-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="container mx-auto">
-        <!-- Doctor Grid Section -->
-        <div class="space-y-8">
-            <!-- Doctor 1 Card -->
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-start space-x-6">
-                <!-- Image Section -->
-                <img src="https://via.placeholder.com/150" alt="Doctor 1" class="rounded-full w-32 h-32 object-cover">
-                <!-- Details Section -->
-                <div class="flex-grow">
-                    <div class="flex justify-between">
-                        <h3 class="text-2xl font-bold">Mr. Vikas Dutta</h3>
-                        <span class="text-lg font-bold text-red-500">₹229 <span class="line-through text-gray-400">₹458</span></span>
-                    </div>
-                    <p class="text-sm text-gray-500">M.B.B.S</p>
-                    <p class="text-sm text-gray-500">Languages: Hindi, English, Marathi</p>
-                    <p class="text-sm text-gray-500">Experience: 3 Years</p>
-                    <p class="text-sm text-blue-600">Next Available: 7:00 PM, Today</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <button class="bg-orange-500 text-white px-6 py-2 rounded-md">Book Appointment</button>
-                    </div>
-                </div>
+
+<body class="bg-gray-50">
+
+    <!-- Header Section -->
+    <header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-stethoscope text-2xl"></i>
+                <h1 class="text-3xl font-bold">TeleMed</h1>
+            </a>
+    
+            <!-- Mobile Menu Toggle (Hamburger Icon) -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <i class="fas fa-bars text-xl"></i>
+            </label>
+    
+            <!-- Navigation Links for Larger Screens -->
+            <nav id="menu" class="hidden md:flex flex-col md:flex-row mt-3 md:mt-0 space-y-2 md:space-y-0 md:space-x-6">
+                <a href="index.html" class="text-gray-200 hover:text-white transition duration-200">Home</a>
+                <a href="services.html" class="text-gray-200 hover:text-white transition duration-200">Services</a>
+                <a href="booking.html" class="text-gray-200 hover:text-white transition duration-200">Book Appointment</a>
+                <a href="contact.html" class="text-gray-200 hover:text-white transition duration-200">Contact Us</a>
+            </nav>
+    
+            <!-- Call-to-Action Button (Desktop Only) -->
+            <a href="signup.html" class="hidden md:inline-block bg-white text-green-600 py-1 px-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+                Log in / Sign in
+            </a>
+        </div>
+    
+        <!-- Mobile Menu Dropdown (for Small Screens) -->
+        <nav id="menu-dropdown" class="hidden md:hidden flex flex-col space-y-2 mt-3">
+            <a href="index.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Home</a>
+            <a href="services.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Services</a>
+            <a href="booking.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Book Appointment</a>
+            <a href="contact.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Contact Us</a>
+        </nav>
+    
+        <!-- Script to toggle menu on mobile -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuDropdown = document.getElementById('menu-dropdown');
+    
+            menuToggle.addEventListener('change', function() {
+                menuDropdown.classList.toggle('hidden');
+            });
+        </script>
+    </header>
+
+    <!-- Doctors List Section -->
+    <section class="container mx-auto mt-10 p-5">
+        <h2 class="text-4xl font-semibold text-center mb-10">Our Doctors</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Doctor 1 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="1.webp" alt="Doctor John Doe" class="mx-auto rounded-full mb-4">
+                <h3 class="text-2xl font-semibold">Dr. John Doe</h3>
+                <p class="text-gray-700">Specialist: Cardiologist</p>
+                <p class="text-gray-500 mt-2">Languages: English, Spanish</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
             </div>
 
-            <!-- Doctor 2 Card -->
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-start space-x-6">
-                <!-- Image Section -->
-                <img src="https://via.placeholder.com/150" alt="Doctor 2" class="rounded-full w-32 h-32 object-cover">
-                <!-- Details Section -->
-                <div class="flex-grow">
-                    <div class="flex justify-between">
-                        <h3 class="text-2xl font-bold">Dr. Garima Srivastava</h3>
-                        <span class="text-lg font-bold text-red-500">₹749 <span class="line-through text-gray-400">₹1318</span></span>
-                    </div>
-                    <p class="text-sm text-gray-500">M.B.B.S</p>
-                    <p class="text-sm text-gray-500">Languages: Hindi, English</p>
-                    <p class="text-sm text-gray-500">Experience: 43 Years</p>
-                    <p class="text-sm text-blue-600">Next Available: 3:00 PM, Today</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <button class="bg-orange-500 text-white px-6 py-2 rounded-md">Book Appointment</button>
-                    </div>
-                </div>
+            <!-- Doctor 2 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="2.webp" alt="Doctor Jane Smith" class="mx-auto rounded-full mb-4">
+                <h3 class="text-2xl font-semibold">Dr. Jane Smith</h3>
+                <p class="text-gray-700">Specialist: Pediatrician</p>
+                <p class="text-gray-500 mt-2">Languages: English, French</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
             </div>
 
-            <!-- Doctor 3 Card -->
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-start space-x-6">
-                <!-- Image Section -->
-                <img src="https://via.placeholder.com/150" alt="Doctor 3" class="rounded-full w-32 h-32 object-cover">
-                <!-- Details Section -->
-                <div class="flex-grow">
-                    <div class="flex justify-between">
-                        <h3 class="text-2xl font-bold">Dr. Seema Arya</h3>
-                        <span class="text-lg font-bold text-red-500">₹799 <span class="line-through text-gray-400">₹1600</span></span>
-                    </div>
-                    <p class="text-sm text-gray-500">M.B.B.S, DCh, DHA</p>
-                    <p class="text-sm text-gray-500">Languages: Hindi, English</p>
-                    <p class="text-sm text-gray-500">Experience: 40 Years</p>
-                    <p class="text-sm text-blue-600">Next Available: 6:00 PM, Today</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <button class="bg-orange-500 text-white px-6 py-2 rounded-md">Book Appointment</button>
-                    </div>
-                </div>
+            <!-- Doctor 3 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="3.webp">
+                <h3 class="text-2xl font-semibold">Dr. Emily Lee</h3>
+                <p class="text-gray-700">Specialist: Neurologist</p>
+                <p class="text-gray-500 mt-2">Languages: English, Mandarin</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="4.webp">
+                <h3 class="text-2xl font-semibold">Dr. Michael Davis</h3>
+                <p class="text-gray-700">Specialist: Orthopedic Surgeon</p>
+                <p class="text-gray-500 mt-2">Languages: English, German</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="5.webp" alt="Doctor Sarah Johnson" class="mx-auto rounded-full mb-4">
+                <h3 class="text-2xl font-semibold">Dr. Sarah Johnson</h3>
+                <p class="text-gray-700">Specialist: Dermatologist</p>
+                <p class="text-gray-500 mt-2">Languages: English, Italian</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="doctor-card bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="6.webp" alt="Doctor William Harris" class="mx-auto rounded-full mb-4">
+                <h3 class="text-2xl font-semibold">Dr. William Harris</h3>
+                <p class="text-gray-700">Specialist: Psychiatrist</p>
+                <p class="text-gray-500 mt-2">Languages: English, Hindi</p>
+                <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Book Appointment</button>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-green-600 text-white text-center py-6 mt-10">
+        <p>&copy; 2023 TeleMed. All rights reserved.</p>
+    </footer>
+
 </body>
+
 </html>
