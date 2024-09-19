@@ -7,22 +7,73 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Additional styles for the header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .sticky-header:hover {
+            background-color: #2f855a; /* Darker green on hover */
+        }
+
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header Section -->
-    <header class="bg-green-600 text-white p-4 shadow-md">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html">
+    <!-- Header Section -->
+    <header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-stethoscope text-2xl"></i>
                 <h1 class="text-3xl font-bold">TeleMed</h1>
             </a>
-            <nav class="flex space-x-3 mt-3 md:mt-0">
-                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
-                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
-                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
-                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
+    
+            <!-- Mobile Menu Toggle (Hamburger Icon) -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <i class="fas fa-bars text-xl"></i>
+            </label>
+    
+            <!-- Navigation Links for Larger Screens -->
+            <nav id="menu" class="hidden md:flex flex-col md:flex-row mt-3 md:mt-0 space-y-2 md:space-y-0 md:space-x-6">
+                <a href="index.html" class="text-gray-200 hover:text-white transition duration-200">Home</a>
+                <a href="services.html" class="text-gray-200 hover:text-white transition duration-200">Services</a>
+                <a href="booking.html" class="text-gray-200 hover:text-white transition duration-200">Book Appointment</a>
+                <a href="contact.html" class="text-gray-200 hover:text-white transition duration-200">Contact Us</a>
             </nav>
+    
+            <!-- Call-to-Action Button (Desktop Only) -->
+            <a href="booking.html" class="hidden md:inline-block bg-white text-green-600 py-2 px-6 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+                Book Now
+            </a>
         </div>
+    
+        <!-- Mobile Menu Dropdown (for Small Screens) -->
+        <nav id="menu-dropdown" class="hidden md:hidden flex flex-col space-y-2 mt-3">
+            <a href="index.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Home</a>
+            <a href="services.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Services</a>
+            <a href="booking.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Book Appointment</a>
+            <a href="contact.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Contact Us</a>
+        </nav>
+    
+        <!-- Script to toggle menu on mobile -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuDropdown = document.getElementById('menu-dropdown');
+    
+            menuToggle.addEventListener('change', function() {
+                menuDropdown.classList.toggle('hidden');
+            });
+        </script>
     </header>
+
 
     <!-- Hero Section -->
     <section class="bg-green-600 text-white text-center py-10 px-4 sm:px-8">
