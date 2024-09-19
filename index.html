@@ -5,46 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telemedicine - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <style>
+        /* Hero Section Image */
         .hero-bg {
             background-image: url('doc 1.jpeg'); /* Add your hero image URL */
-            background-size: cover; /* Cover the entire container */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent repeating the image */
-            width: 100%; /* Ensure the container takes full width */
-            height: 100vh; /* Set height to full viewport height for the hero section */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh; /* Full height for hero section */
         }
     
+        /* Adjust height for smaller screens */
         @media (max-width: 768px) {
             .hero-bg {
-                background-size: cover; /* Ensure the image covers the container on smaller screens */
-                height: 70vh; /* Adjust height for smaller screens if needed */
+                height: 70vh; /* Smaller height on mobile */
             }
         }
     </style>
-    
 </head>
 <body class="bg-gray-50">
+
     <!-- Header Section -->
-    <header class="bg-green-700 text-white p-4 shadow-md">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html">
+    <header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-stethoscope text-2xl"></i>
                 <h1 class="text-3xl font-bold">TeleMed</h1>
             </a>
-            <nav class="flex space-x-3 mt-3 md:mt-0">
-                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
-                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
-                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
-                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
+    
+            <!-- Mobile Menu Toggle (Hamburger Icon) -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <i class="fas fa-bars text-xl"></i>
+            </label>
+    
+            <!-- Navigation Links for Larger Screens -->
+            <nav id="menu" class="hidden md:flex flex-col md:flex-row mt-3 md:mt-0 space-y-2 md:space-y-0 md:space-x-6">
+                <a href="index.html" class="text-gray-200 hover:text-white transition duration-200">Home</a>
+                <a href="services.html" class="text-gray-200 hover:text-white transition duration-200">Services</a>
+                <a href="booking.html" class="text-gray-200 hover:text-white transition duration-200">Book Appointment</a>
+                <a href="contact.html" class="text-gray-200 hover:text-white transition duration-200">Contact Us</a>
             </nav>
+    
+            <!-- Call-to-Action Button (Desktop Only) -->
+            <a href="booking.html" class="hidden md:inline-block bg-white text-green-600 py-2 px-6 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+                Book Now
+            </a>
         </div>
+    
+        <!-- Mobile Menu Dropdown (for Small Screens) -->
+        <nav id="menu-dropdown" class="hidden md:hidden flex flex-col space-y-2 mt-3">
+            <a href="index.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Home</a>
+            <a href="services.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Services</a>
+            <a href="booking.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Book Appointment</a>
+            <a href="contact.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Contact Us</a>
+        </nav>
+    
+        <!-- Script to toggle menu on mobile -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuDropdown = document.getElementById('menu-dropdown');
+    
+            menuToggle.addEventListener('change', function() {
+                menuDropdown.classList.toggle('hidden');
+            });
+        </script>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="hero-bg text-white text-center py-32 md:py-44 px-4">
         <div class="container mx-auto">
-            <h2 class="text-4xl sm:text-7xl font-semibold mb-8 text-navy-400">Quality Care at Your Fingertips</h2>
+            <h2 class="text-4xl sm:text-7xl font-semibold mb-8 text-navy-100">Quality Care at Your Fingertips</h2>
             <p class="text-base sm:text-lg mb-8 text-navy-400">Experience top-notch medical consultations and services from anywhere, anytime.</p>
             <a href="booking.html" class="bg-green-700 text-white py-3 px-6 rounded-full text-base font-semibold shadow-lg hover:bg-gray-700">Book Your Appointment</a>
         </div>
