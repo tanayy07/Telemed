@@ -16,6 +16,19 @@
             background-repeat: no-repeat;
             width: 100%;
             height: 100vh; /* Full height for hero section */
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text readability */
+            z-index: -1;
         }
     
         /* Adjust height for smaller screens */
@@ -23,6 +36,18 @@
             .hero-bg {
                 height: 70vh; /* Smaller height on mobile */
             }
+        }
+
+        /* Service Cards Hover Effects */
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Button Hover Effects */
+        .cta-button:hover {
+            background-color: #2d3748;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -79,9 +104,9 @@
     <!-- Hero Section -->
     <section class="hero-bg text-white text-center py-32 md:py-44 px-4">
         <div class="container mx-auto">
-            <h2 class="text-4xl sm:text-7xl font-semibold mb-8 text-navy-100">Quality Care at Your Fingertips</h2>
-            <p class="text-base sm:text-lg mb-8 text-navy-400">Experience top-notch medical consultations and services from anywhere, anytime.</p>
-            <a href="booking.html" class="bg-green-700 text-white py-3 px-6 rounded-full text-base font-semibold shadow-lg hover:bg-gray-700">Book Your Appointment</a>
+            <h2 class="text-4xl sm:text-7xl font-semibold mb-8 text-teal-200">Quality Care at Your Fingertips</h2>
+            <p class="text-base sm:text-lg mb-8 text-teal-100">Experience top-notch medical consultations and services from anywhere, anytime.</p>
+            <a href="booking.html" class="bg-green-700 text-white py-3 px-6 rounded-full text-base font-semibold shadow-lg hover:bg-gray-700 cta-button">Book Your Appointment</a>
         </div>
     </section>
 
@@ -89,15 +114,15 @@
     <section class="container mx-auto text-center py-12 px-4">
         <h2 class="text-3xl sm:text-4xl font-semibold mb-10 text-green-700">Our Services</h2>
         <div class="flex flex-wrap justify-center">
-            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 service-card">
                 <h3 class="text-xl font-semibold mb-4 text-green-700">Consultations</h3>
                 <p class="text-gray-700">Get expert medical advice and consultations from experienced doctors.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 service-card">
                 <h3 class="text-xl font-semibold mb-4 text-green-700">Lab Tests</h3>
                 <p class="text-gray-700">Convenient lab tests with home sample collection and quick results.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+            <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 service-card">
                 <h3 class="text-xl font-semibold mb-4 text-green-700">Medication</h3>
                 <p class="text-gray-700">Order prescriptions and have medications delivered to your doorstep.</p>
             </div>
@@ -109,11 +134,11 @@
         <div class="container mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-semibold mb-8 text-green-700">What Our Patients Say</h2>
             <div class="flex flex-wrap justify-center">
-                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 hover:shadow-lg">
                     <p class="italic text-gray-800">"TeleMed has been a lifesaver. The consultations are quick, and the doctors are very knowledgeable."</p>
                     <p class="mt-4 font-semibold text-gray-600">- Aditya Vishe</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72">
+                <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 hover:shadow-lg">
                     <p class="italic text-gray-800">"Convenient and reliable. I got my lab results in no time and the service was top-notch."</p>
                     <p class="mt-4 font-semibold text-gray-600">- Sanika Shirode</p>
                 </div>
