@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             z-index: 1000;
             transition: background-color 0.3s ease-in-out;
         }
+
         .sticky-header:hover {
             background-color: #2f855a; /* Darker green on hover */
         }
@@ -22,10 +24,15 @@
         #menu-toggle:checked + #menu {
             display: block;
         }
+
+        /* Hide additional options initially */
+        .hidden-field {
+            display: none;
+        }
     </style>
 </head>
+
 <body class="bg-gray-100">
-    <!-- Header Section -->
     <!-- Header Section -->
     <header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
@@ -34,7 +41,7 @@
                 <i class="fas fa-stethoscope text-2xl"></i>
                 <h1 class="text-3xl font-bold">TeleMed</h1>
             </a>
-    
+
             <!-- Mobile Menu Toggle (Hamburger Icon) -->
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="cursor-pointer md:hidden block">
@@ -50,8 +57,8 @@
             </nav>
     
             <!-- Call-to-Action Button (Desktop Only) -->
-            <a href="booking.html" class="hidden md:inline-block bg-white text-green-600 py-2 px-6 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
-                Book Now
+            <a href="signup.html" class="hidden md:inline-block bg-white text-green-600 py-1 px-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+                Log in / Sign in
             </a>
         </div>
     
@@ -89,7 +96,7 @@
                 <div class="bg-gray-300 rounded-full h-2.5 mb-4">
                     <div class="bg-green-600 h-2.5 rounded-full" style="width: 50%;"></div>
                 </div>
-                <p class="text-center text-gray-700">Step 2 of 3 - Fill in your details</p>
+                <p class="text-center text-gray-700">Step 1 of 2 - Fill in your details</p>
             </div>
         </div>
 
@@ -104,40 +111,43 @@
                     <i class="fas fa-user absolute top-2/3 left-3 transform -translate-y-1/3 text-gray-500"></i>
                 </div>
 
-                <!-- Email Field -->
-                <div class="mb-4 relative">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" placeholder="Enter your email address" required>
-                    <i class="fas fa-envelope absolute top-2/3 left-3 transform -translate-y-1/3 text-gray-500"></i>
-                </div>
-
                 <!-- Select Service Field -->
                 <div class="mb-4 relative">
                     <label for="service" class="block text-gray-700">Select Service</label>
-                    <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" required>
+                    <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" required onchange="showOptions()">
                         <option value="">Choose a Service</option>
-                        <option>Doctor Consultation</option>
-                        <option>Lab Test</option>
-                        <option>Health Package</option>
+                        <option value="consultation">Doctor Consultation</option>
+                        <option value="lab_test">Lab Test</option>
+                        <option value="health_package">Health Package</option>
                     </select>
                     <i class="fas fa-stethoscope absolute top-2/3 left-3 transform -translate-y-1/3 text-gray-500"></i>
                 </div>
 
-                <!-- Date Field -->
-                <div class="mb-4 relative">
-                    <label for="date" class="block text-gray-700">Preferred Date</label>
-                    <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" required>
-                    <i class="fas fa-calendar-alt absolute top-2/3 left-3 transform -translate-y-1/3 text-gray-500"></i>
+                <!-- Doctor Consultation Options -->
+                <div id="doctor-options" class="hidden-field mt-6">
+                    <label for="doctor-type" class="block text-gray-700 mb-2">Preferred Doctor Type</label>
+                    <select id="doctor-type" name="doctor-type" class="w-full p-3 border border-gray-300 rounded mt-1">
+                        <option value="general_physician">General Physician</option>
+                        <option value="gynecologist">Gynecologist</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="pediatrician">Pediatrician</option>
+                    </select>
                 </div>
 
-                <!-- Time Field -->
-                <div class="mb-4 relative">
-                    <label for="time" class="block text-gray-700">Preferred Time</label>
-                    <input type="time" id="time" name="time" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" required>
-                    <i class="fas fa-clock absolute top-2/3 left-3 transform -translate-y-1/3 text-gray-500"></i>
+                <!-- Health Package Options -->
+                <div id="package-options" class="hidden-field mt-6">
+                    <label for="package-type" class="block text-gray-700 mb-2">Select Health Package</label>
+                    <select id="package-type" name="package-type" class="w-full p-3 border border-gray-300 rounded mt-1">
+                        <option value="basic_health">Basic Health Checkup</option>
+                        <option value="premium_health">Premium Health Package</option>
+                        <option value="heart_checkup">Heart Health Checkup</option>
+                    </select>
                 </div>
 
-                <button type="submit" class="bg-green-600 text-white py-3 px-4 rounded w-full hover:bg-green-500 transition duration-300">Book Appointment</button>
+                <!-- Submit Button with margin at the top -->
+                <button type="button" class="bg-green-600 text-white py-3 px-4 rounded w-full mt-8 hover:bg-green-500 transition duration-300" onclick="redirectUser()">
+                    Book Appointment
+                </button>
             </form>
         </div>
 
@@ -148,31 +158,69 @@
         </div>
 
         <!-- Testimonials Section -->
-        <section class="mt-16 px-4">
-            <h3 class="text-3xl font-semibold text-center text-green-600 mb-6">What Our Patients Say</h3>
-            <div class="flex flex-wrap justify-center gap-8">
-                <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full sm:w-auto">
-                    <p class="text-gray-700 mb-4">"The booking process was so smooth! I got a consultation with a top doctor in no time."</p>
-                    <p class="text-green-600 font-semibold">- Aditya.V</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full sm:w-auto">
-                    <p class="text-gray-700 mb-4">"Highly professional and easy to use. I was able to book a lab test from home!"</p>
-                    <p class="text-green-600 font-semibold">- Sanika.S.</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full sm:w-auto">
-                    <p class="text-gray-700 mb-4">"TeleMed offers the best healthcare experience! Booking an appointment was a breeze."</p>
-                    <p class="text-green-600 font-semibold">- Manthan.P </p>
+        <section class="bg-gray-100 py-12 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-semibold mb-8 text-green-700">What Our Patients Say</h2>
+                <div class="flex flex-wrap justify-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 hover:shadow-lg">
+                        <p class="italic text-gray-800">"The booking process was so smooth! I got a consultation with a top doctor in no time."</p>
+                        <p class="mt-4 font-semibold text-gray-600">- Aditya Vishe</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 hover:shadow-lg">
+                        <p class="italic text-gray-800">"Highly professional and easy to use. I was able to book a lab test from home!"</p>
+                        <p class="mt-4 font-semibold text-gray-600">- Sanika Shirode</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md m-4 w-full sm:w-72 transform transition-transform duration-300 hover:shadow-lg">
+                        <p class="italic text-gray-800">"Highly professional and easy to use. I was able to book a lab test from home!"</p>
+                        <p class="mt-4 font-semibold text-gray-600">- Sanika Shirode</p>
+                    </div>  
                 </div>
             </div>
         </section>
-    </main>
+    </main> 
 
     <!-- Footer Section -->
     <footer class="bg-green-600 text-white mt-10 p-4 text-center">
         <p>&copy; 2024 TeleMed. All Rights Reserved.</p>
     </footer>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+    <!-- Script to toggle service options -->
+    <script>
+        function showOptions() {
+            const service = document.getElementById("service").value;
+            const doctorOptions = document.getElementById("doctor-options");
+            const packageOptions = document.getElementById("package-options");
+
+            // Hide both sections initially
+            doctorOptions.style.display = "none";
+            packageOptions.style.display = "none";
+
+            // Show relevant section based on selected service
+            if (service === "consultation") {
+                doctorOptions.style.display = "block";
+            } else if (service === "health_package") {
+                packageOptions.style.display = "block";
+            }
+        }
+
+        // Check login status and redirect
+        function redirectUser() {
+            // Simulate checking login status using localStorage (or cookies)
+            const isLoggedIn = localStorage.getItem('loggedIn');
+
+            // If the user is logged in, redirect to the doctorgrid page
+            if (isLoggedIn === 'true') {
+                window.location.href = 'doctorgrid.html'; // Replace with actual page URL
+            } 
+            // Otherwise, redirect to the login page
+            else {
+                window.location.href = 'login.html'; // Replace with actual login page URL
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
