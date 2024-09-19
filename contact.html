@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,84 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Input focus style */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #38a169;
+            box-shadow: 0 0 5px rgba(56, 161, 105, 0.5);
+        }
+
+        /* Button hover and transition */
+        button {
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            background-color: #2f855a;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100">
     <!-- Header Section -->
-    <header class="bg-green-600 text-white p-4 shadow-md">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold hover:text-gray-200">TeleMed</a>
-            <nav class="flex space-x-3 mt-3 md:mt-0">
-                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
-                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
-                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
-                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
+    <header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-stethoscope text-2xl"></i>
+                <h1 class="text-3xl font-bold">TeleMed</h1>
+            </a>
+    
+            <!-- Mobile Menu Toggle (Hamburger Icon) -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <i class="fas fa-bars text-xl"></i>
+            </label>
+    
+            <!-- Navigation Links for Larger Screens -->
+            <nav id="menu" class="hidden md:flex flex-col md:flex-row mt-3 md:mt-0 space-y-2 md:space-y-0 md:space-x-6">
+                <a href="index.html" class="text-gray-200 hover:text-white transition duration-200">Home</a>
+                <a href="services.html" class="text-gray-200 hover:text-white transition duration-200">Services</a>
+                <a href="booking.html" class="text-gray-200 hover:text-white transition duration-200">Book Appointment</a>
+                <a href="contact.html" class="text-gray-200 hover:text-white transition duration-200">Contact Us</a>
             </nav>
+    
+            <!-- Call-to-Action Button (Desktop Only) -->
+            <a href="booking.html" class="hidden md:inline-block bg-white text-green-600 py-2 px-6 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+                Book Now
+            </a>
         </div>
+    
+        <!-- Mobile Menu Dropdown (for Small Screens) -->
+        <nav id="menu-dropdown" class="hidden md:hidden flex flex-col space-y-2 mt-3">
+            <a href="index.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Home</a>
+            <a href="services.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Services</a>
+            <a href="booking.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Book Appointment</a>
+            <a href="contact.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Contact Us</a>
+        </nav>
+    
+        <!-- Script to toggle menu on mobile -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuDropdown = document.getElementById('menu-dropdown');
+    
+            menuToggle.addEventListener('change', function() {
+                menuDropdown.classList.toggle('hidden');
+            });
+        </script>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-green-600 text-white text-center py-10 px-4">
-        <h2 class="text-3xl sm:text-4xl font-semibold">We're Here to Help You</h2>
+        <h2 class="text-4xl sm:text-5xl font-semibold">We're Here to Help You</h2>
         <p class="mt-4 text-base sm:text-lg">Reach out to us for any queries, assistance, or feedback.</p>
     </section>
 
@@ -34,26 +95,26 @@
 
         <!-- Contact Form with Icons -->
         <div class="flex justify-center">
-            <form action="#" method="post" class="bg-white p-8 rounded shadow-lg w-full max-w-lg">
+            <form action="#" method="post" class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full max-w-lg">
                 <div class="mb-4 relative">
                     <label for="name" class="block text-gray-700">Full Name</label>
-                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" placeholder="Enter your full name" required>
+                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10 focus:ring focus:ring-green-300" placeholder="Enter your full name" required>
                     <i class="fas fa-user absolute top-2/3 left-3 transform -translate-y-1/2 text-gray-500"></i>
                 </div>
 
                 <div class="mb-4 relative">
                     <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" placeholder="Enter your email address" required>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10 focus:ring focus:ring-green-300" placeholder="Enter your email address" required>
                     <i class="fas fa-envelope absolute top-2/3 left-3 transform -translate-y-1/2 text-gray-500"></i>
                 </div>
 
                 <div class="mb-4 relative">
                     <label for="message" class="block text-gray-700">Message</label>
-                    <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10" placeholder="Write your message" required></textarea>
+                    <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded mt-1 pl-10 focus:ring focus:ring-green-300" placeholder="Write your message" required></textarea>
                     <i class="fas fa-comment-dots absolute top-1/4 left-3 text-gray-500"></i>
                 </div>
 
-                <button type="submit" class="bg-green-600 text-white py-3 px-4 rounded w-full hover:bg-green-500 transition duration-300">Send Message</button>
+                <button type="submit" class="bg-green-600 text-white py-3 px-4 rounded-full w-full hover:bg-green-500 transition duration-300">Send Message</button>
             </form>
         </div>
 
@@ -62,23 +123,23 @@
             <h3 class="text-2xl font-semibold mb-2 text-green-700">Contact Information</h3>
             <p class="mb-4 text-gray-600">You can also reach us via the following methods:</p>
 
-            <div class="flex flex-wrap justify-center space-x-4 md:space-x-10 mt-6">
+            <div class="flex flex-wrap justify-center space-x-0 sm:space-x-6 md:space-x-10 mt-6">
                 <!-- Email Card with mailto link -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60">
+                <div class="card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60 text-center">
                     <i class="fas fa-envelope text-green-600 text-3xl mb-4"></i>
                     <h4 class="font-semibold text-gray-700">Email</h4>
                     <a href="mailto:support@telemed.com" class="text-gray-600 hover:text-green-600">support@telemed.com</a>
                 </div>
 
                 <!-- Phone Card with tel link -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60">
+                <div class="card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60 text-center mt-4 sm:mt-0">
                     <i class="fas fa-phone-alt text-green-600 text-3xl mb-4"></i>
                     <h4 class="font-semibold text-gray-700">Phone</h4>
                     <a href="tel:+1234567890" class="text-gray-600 hover:text-green-600">+1 234 567 890</a>
                 </div>
 
                 <!-- Location Card with Google Maps link -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60">
+                <div class="card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-60 text-center mt-4 sm:mt-0">
                     <i class="fas fa-map-marker-alt text-green-600 text-3xl mb-4"></i>
                     <h4 class="font-semibold text-gray-700">Location</h4>
                     <a href="https://www.google.com/maps?q=Navi+Mumbai" target="_blank" class="text-gray-600 hover:text-green-600">Navi Mumbai</a>
@@ -106,4 +167,5 @@
     <!-- FontAwesome Script -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
