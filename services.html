@@ -10,66 +10,83 @@
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="bg-green-700 text-white p-4 shadow-md">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html">
-                <h1 class="text-3xl font-bold">TeleMed</h1>
-            </a>
-            <nav class="flex space-x-3 mt-3 md:mt-0">
-                <a href="index.html" class="px-2 text-gray-200 hover:text-white">Home</a>
-                <a href="services.html" class="px-2 text-gray-200 hover:text-white">Services</a>
-                <a href="booking.html" class="px-2 text-gray-200 hover:text-white">Book Appointment</a>
-                <a href="contact.html" class="px-2 text-gray-200 hover:text-white">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Section -->
+<header class="bg-green-600 text-white p-4 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center flex-col md:flex-row">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2">
+            <i class="fas fa-stethoscope text-2xl"></i>
+            <h1 class="text-3xl font-bold">TeleMed</h1>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" class="hidden">
+        <label for="menu-toggle" class="cursor-pointer md:hidden block">
+            <i class="fas fa-bars text-xl"></i>
+        </label>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex flex-col md:flex-row mt-3 md:mt-0 space-y-2 md:space-y-0 md:space-x-6">
+            <a href="index.html" class="text-gray-200 hover:text-white transition duration-200">Home</a>
+            <a href="services.html" class="text-gray-200 hover:text-white transition duration-200">Services</a>
+            <a href="booking.html" class="text-gray-200 hover:text-white transition duration-200">Book Appointment</a>
+            <a href="contact.html" class="text-gray-200 hover:text-white transition duration-200">Contact Us</a>
+        </nav>
+
+        <!-- Call-to-Action Button for Desktop -->
+        <a href="booking.html" class="hidden md:inline-block bg-white text-green-600 py-2 px-6 rounded-full font-semibold shadow-md hover:bg-gray-100 transition duration-300 mt-3 md:mt-0">
+            Book Now
+        </a>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <nav id="menu" class="flex flex-col space-y-2 mt-3 md:hidden">
+        <a href="index.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Home</a>
+        <a href="services.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Services</a>
+        <a href="booking.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Book Appointment</a>
+        <a href="contact.html" class="block px-4 py-2 bg-green-500 hover:bg-green-600 transition duration-200">Contact Us</a>
+    </nav>
+</header>
+
 
     <!-- Services Section -->
-    <main class="container mx-auto mt-10 p-5">
+    <section class="container mx-auto mt-10 p-5">
         <h2 class="text-4xl font-semibold mb-8 text-center text-green-700">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+    
+        <!-- Responsive 2x2 Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+    
             <!-- Doctor Consultation Card -->
-            <a href="consultation.html" class="group">
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
-                    <i class="fas fa-user-md text-5xl text-green-700 absolute top-4 right-4"></i>
-                    <h3 class="text-xl font-bold text-green-700 mb-3">Doctor Consultations</h3>
-                    <p class="text-gray-700">Get expert medical advice from qualified doctors through video calls or chat, right from the comfort of your home.</p>
-                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
-                </div>
-            </a>
-
-            <!-- Lab Test Card -->
-            <a href="lab-test.html" class="group">
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
-                    <i class="fas fa-vial text-5xl text-green-700 absolute top-4 right-4"></i>
-                    <h3 class="text-xl font-bold text-green-700 mb-3">Lab Tests at Home</h3>
-                    <p class="text-gray-700">Schedule lab tests and have samples collected from your home. Receive results quickly and conveniently.</p>
-                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
-                </div>
-            </a>
-
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative transform hover:-translate-y-1 hover:scale-105 hover:bg-green-50">
+                <i class="fas fa-user-md text-5xl text-green-700 absolute top-4 right-4"></i>
+                <h3 class="text-2xl font-bold text-green-700 mb-3">Doctor Consultations</h3>
+                <p class="text-gray-700">Get expert medical advice from qualified doctors through video calls or chat, right from the comfort of your home.</p>
+            </div>
+    
+            <!-- Lab Tests at Home Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative transform hover:-translate-y-1 hover:scale-105 hover:bg-green-50">
+                <i class="fas fa-vial text-5xl text-green-700 absolute top-4 right-4"></i>
+                <h3 class="text-2xl font-bold text-green-700 mb-3">Lab Tests at Home</h3>
+                <p class="text-gray-700">Schedule lab tests and have samples collected from your home. Receive results quickly and conveniently.</p>
+            </div>
+    
             <!-- Health Packages Card -->
-            <a href="health-packages.html" class="group">
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
-                    <i class="fas fa-heartbeat text-5xl text-green-700 absolute top-4 right-4"></i>
-                    <h3 class="text-xl font-bold text-green-700 mb-3">Specialized Health Packages</h3>
-                    <p class="text-gray-700">Choose from a range of health packages tailored to meet specific health needs and conditions.</p>
-                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
-                </div>
-            </a>
-
-            <!-- Prescription Refill Card -->
-            <a href="prescription-refill.html" class="group">
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative">
-                    <i class="fas fa-pills text-5xl text-green-700 absolute top-4 right-4"></i>
-                    <h3 class="text-xl font-bold text-green-700 mb-3">Prescription Refills</h3>
-                    <p class="text-gray-700">Easily refill your prescriptions and get them delivered to your doorstep without the hassle of visiting a pharmacy.</p>
-                    <div class="invisible group-hover:visible absolute inset-0 bg-green-50 bg-opacity-50"></div>
-                </div>
-            </a>
-
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative transform hover:-translate-y-1 hover:scale-105 hover:bg-green-50">
+                <i class="fas fa-heartbeat text-5xl text-green-700 absolute top-4 right-4"></i>
+                <h3 class="text-2xl font-bold text-green-700 mb-3">Specialized Health Packages</h3>
+                <p class="text-gray-700">Choose from a range of health packages tailored to meet specific health needs and conditions.</p>
+            </div>
+    
+            <!-- Prescription Refills Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 relative transform hover:-translate-y-1 hover:scale-105 hover:bg-green-50">
+                <i class="fas fa-pills text-5xl text-green-700 absolute top-4 right-4"></i>
+                <h3 class="text-2xl font-bold text-green-700 mb-3">Prescription Refills</h3>
+                <p class="text-gray-700">Easily refill your prescriptions and get them delivered to your doorstep without the hassle of visiting a pharmacy.</p>
+            </div>
+    
         </div>
+    </section>
+        
         
         <!-- Why Choose Us Section -->
         <section class="mt-16 text-center">
